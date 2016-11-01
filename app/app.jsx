@@ -4,10 +4,13 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
 $(document).foundation();
 
-require('style!css!sass!applicationStyles')
+require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
 <p>Boilerplate3</p>
 ,
   document.getElementById('app')
 );
+
+require('./redux-example');
+require('./redux-todo-example');
