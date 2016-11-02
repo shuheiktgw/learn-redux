@@ -1,5 +1,6 @@
 var redux = require('redux');
 
+
 console.log('Starting todo redux example');
 
 var stateDefault = {
