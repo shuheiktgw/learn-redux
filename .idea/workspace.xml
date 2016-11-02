@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51032e31-fffa-42e2-8b4c-54f4b5c5642b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.jsx" afterPath="$PROJECT_DIR$/app/app.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/redux-example.jsx" afterPath="$PROJECT_DIR$/app/redux-example.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/redux-todo-example.jsx" afterPath="$PROJECT_DIR$/app/redux-todo-example.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bundle.js" afterPath="$PROJECT_DIR$/public/bundle.js" />
     </list>
@@ -40,8 +41,8 @@
       <file leaf-file-name="redux-example.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/redux-example.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="16" column="115" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="115" />
               <folding />
             </state>
           </provider>
@@ -50,8 +51,8 @@
       <file leaf-file-name="redux-todo-example.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/redux-todo-example.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+            <state relative-caret-position="393">
+              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -61,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/app/app.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -70,7 +71,7 @@
       <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
+            <state relative-caret-position="603">
               <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
               <folding />
             </state>
@@ -159,10 +160,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="23" />
-    <option name="width" value="1362" />
-    <option name="height" value="745" />
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -234,6 +233,7 @@
     <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nodebrew/current/bin/node" />
     <property name="nodejs_interpreter_path" value="$USER_HOME$/.nodebrew/current/bin/node" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -306,18 +306,18 @@
       <option name="presentableId" value="Default" />
       <updated>1477553649799</updated>
       <workItem from="1477553652314" duration="27731000" />
-      <workItem from="1477915573712" duration="3451000" />
+      <workItem from="1477915573712" duration="5603000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31182000" />
+    <option name="totallyTimeSpent" value="33334000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="23" width="1362" height="745" extended-state="6" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17400882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17349927" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -441,14 +441,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/components/CountdownForm.jsx" />
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/base/_foundation-settings.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -457,10 +449,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/redux-example.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="16" column="115" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="115" />
           <folding />
         </state>
       </provider>
@@ -468,15 +468,15 @@
     <entry file="file://$PROJECT_DIR$/app/app.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/redux-todo-example.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        <state relative-caret-position="393">
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
           <folding />
         </state>
       </provider>

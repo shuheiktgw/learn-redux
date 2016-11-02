@@ -24,21 +24,23 @@ var reducer = (state = stateDefault, action) => {
   }
 };
 
-var store = redux.createStore(reducer);
+var store = redux.createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+store.subscribe(() => {
+  var state = store.getState();
+
+  console.log('searchText is', state.searchText);
+  document.getElementById('app').innerHTML = state.searchText;
+});
 
 console.log('Current State ', store.getState());
 
-var action = {
-  type: 'CHANGE_NAME',
-  name: 'Shuhei'
-};
-store.dispatch(action);
-
-var seatchTextAction = {
+store.dispatch({
   type: 'CHANGE_SEARCH_TEXT',
   searchText: 'Why do we live?'
-};
-store.dispatch(seatchTextAction);
+});
 
-console.log('Name should be andrew', store.getState());
-console.log('Search Text should be Why do we live?', store.getState());
+store.dispatch({
+  type: 'CHANGE_SEARCH_TEXT',
+  searchText: 'Why do we die?'
+});
