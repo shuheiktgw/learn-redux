@@ -1,9 +1,10 @@
 var redux = require('redux');
+var axios = require('axios');
 
 console.log('Starting redux example');
 
 var nameReducer = (state = 'Anonymous', action) => {
-  switch(action.type){
+  switch (action.type) {
     case 'CHANGE_NAME':
       return action.name;
     default:
@@ -20,7 +21,7 @@ var changeName = (name) => {
 
 var nextHobbyId = 1;
 var hobbiesReducer = (state = [], action) => {
-  switch(action.type){
+  switch (action.type) {
     case 'ADD_HOBBY':
       return [
         ...state,
@@ -52,9 +53,9 @@ var removeHobby = (id) => {
 
 var nextMovieId = 1;
 var moviesReducer = (state = [], action) => {
-  switch(action.type){
+  switch (action.type) {
     case 'ADD_MOVIE':
-      return[
+      return [
         ...state,
         {
           id: nextMovieId++,
@@ -70,7 +71,7 @@ var moviesReducer = (state = [], action) => {
 };
 
 var addMovie = (title, genre) => {
-  return{
+  return {
     type: 'ADD_MOVIE',
     title,
     genre
@@ -78,16 +79,58 @@ var addMovie = (title, genre) => {
 };
 
 var removeMovie = (id) => {
-  return{
+  return {
     type: 'REMOVE_HOBBY',
     id
   }
 };
 
+var mapReducer = (state = {isFetching: false, url: undefined}, action) => {
+  switch (action.type) {
+    case 'START_LOCATION_FETCH':
+      return {
+        isFetching: true,
+        url: undefined
+      };
+    case 'COMPLETE_LOCATION_FETCH':
+      return {
+        isFetching: false,
+        url: action.url
+      };
+    default:
+      return state
+  }
+};
+
+var startLocationFetch = () => {
+  return {
+    type: 'START_LOCATION_FETCH',
+  }
+};
+
+var completeLocationFetch = (url) => {
+  return {
+    type: 'COMPLETE_LOCATION_FETCH',
+    url
+  }
+};
+
+var fetchLocation = () => {
+  store.dispatch(startLocationFetch());
+
+  axios.get('http://ipinfo.io').then((res) => {
+    var loc = res.data.loc
+    var baseUrl = 'http://maps.google.com?q='
+
+    store.dispatch(completeLocationFetch(baseUrl + loc))
+  })
+};
+
 var reducer = redux.combineReducers({
   name: nameReducer,
   hobbies: hobbiesReducer,
-  movies: moviesReducer
+  movies: moviesReducer,
+  map: mapReducer
 });
 
 var store = redux.createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
@@ -95,19 +138,23 @@ var store = redux.createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && wi
 var unsubscribe = store.subscribe(() => {
   var state = store.getState();
 
-  console.log('Name is', state.name);
-  document.getElementById('app').innerHTML = state.name;
+  console.log('New state', state);
 
-  console.log('New state', state)
+  if(state.map.isFetching){
+    document.getElementById('app').innerHTML = 'Loading...';
+  }else if (state.map.url){
+    document.getElementById('app').innerHTML = '<a href="' + state.map.url + '"target="_blank">View Your Loxation</a>';
+  }
 });
-// unsubscribe();
+
+fetchLocation()
 
 store.dispatch(changeName('Shuhei'));
 store.dispatch(addHobby("Running"));
 store.dispatch(addHobby("Walking"));
 store.dispatch(removeHobby(1));
 store.dispatch(changeName('Emily'));
-store.dispatch(addMovie("Star Wars","Action"));
+store.dispatch(addMovie("Star Wars", "Action"));
 store.dispatch(addMovie("The big bang theory", "Action"));
 store.dispatch(removeMovie(2));
 
