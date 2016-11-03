@@ -2,15 +2,6 @@ var redux = require('redux');
 
 console.log('Starting redux example');
 
-var stateDefault = {
-  name: 'Anonymous',
-  hobbies: [],
-  movies: []
-};
-
-var nextHobbyId = 1;
-var nextMovieId = 1;
-
 var nameReducer = (state = 'Anonymous', action) => {
   switch(action.type){
     case 'CHANGE_NAME':
@@ -20,6 +11,14 @@ var nameReducer = (state = 'Anonymous', action) => {
   }
 };
 
+var changeName = (name) => {
+  return {
+    type: 'CHANGE_NAME',
+    name
+  }
+};
+
+var nextHobbyId = 1;
 var hobbiesReducer = (state = [], action) => {
   switch(action.type){
     case 'ADD_HOBBY':
@@ -37,6 +36,21 @@ var hobbiesReducer = (state = [], action) => {
   }
 };
 
+var addHobby = (hobby) => {
+  return {
+    type: 'ADD_HOBBY',
+    hobby
+  }
+};
+
+var removeHobby = (id) => {
+  return {
+    type: 'REMOVE_HOBBY',
+    id
+  }
+};
+
+var nextMovieId = 1;
 var moviesReducer = (state = [], action) => {
   switch(action.type){
     case 'ADD_MOVIE':
@@ -52,6 +66,21 @@ var moviesReducer = (state = [], action) => {
       return state.filter((movie) => movie.id !== action.id)
     default:
       return state
+  }
+};
+
+var addMovie = (title, genre) => {
+  return{
+    type: 'ADD_MOVIE',
+    title,
+    genre
+  }
+};
+
+var removeMovie = (id) => {
+  return{
+    type: 'REMOVE_HOBBY',
+    id
   }
 };
 
@@ -73,46 +102,12 @@ var unsubscribe = store.subscribe(() => {
 });
 // unsubscribe();
 
-store.dispatch({
-  type: 'CHANGE_NAME',
-  name: 'Shuhei'
-});
-
-store.dispatch({
-  type: 'ADD_HOBBY',
-  hobby: 'Running'
-});
-
-store.dispatch({
-  type: 'ADD_HOBBY',
-  hobby: 'Walking'
-});
-
-store.dispatch({
-  type: 'REMOVE_HOBBY',
-  id: 2
-});
-
-store.dispatch({
-  type: 'ADD_MOVIE',
-  title: 'Big bang theory',
-  genre: 'Sitcom'
-});
-
-store.dispatch({
-  type: 'ADD_MOVIE',
-  title: 'Load of the ring',
-  genre: 'Action'
-});
-
-store.dispatch({
-  type: 'REMOVE_MOVIE',
-  id: 2
-});
-
-store.dispatch({
-  type: 'CHANGE_NAME',
-  name: 'Emily'
-});
-
+store.dispatch(changeName('Shuhei'));
+store.dispatch(addHobby("Running"));
+store.dispatch(addHobby("Walking"));
+store.dispatch(removeHobby(1));
+store.dispatch(changeName('Emily'));
+store.dispatch(addMovie("Star Wars","Action"));
+store.dispatch(addMovie("The big bang theory", "Action"));
+store.dispatch(removeMovie(2));
 
